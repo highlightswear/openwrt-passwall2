@@ -84,7 +84,7 @@ jobs:
   job_build_passwall2:
     name: Build passwall2 [${{ matrix.ver }}]
     needs: job_check
-    if: needs.job_check.outputs.has_update == 'true'
+    #if: needs.job_check.outputs.has_update == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -199,7 +199,7 @@ jobs:
 
 
   job_auto_compile:
-    if: ${{ needs.job_check.outputs.has_update == 'true' && needs.job_check.outputs.prerelease == 'false' }}
+    #if: ${{ needs.job_check.outputs.has_update == 'true' && needs.job_check.outputs.prerelease == 'false' }}
     needs: job_check
     runs-on: ubuntu-latest
     name: build (${{ matrix.ver }}-${{ matrix.platform }})
